@@ -1,0 +1,431 @@
+
+atorr048_stran050_lab3_part1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000324  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000002d0  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000324  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000354  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000020  00000000  00000000  00000394  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000833  00000000  00000000  000003b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000078d  00000000  00000000  00000be7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000265  00000000  00000000  00001374  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000034  00000000  00000000  000015dc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000429  00000000  00000000  00001610  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000048  00000000  00000000  00001a39  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000010  00000000  00000000  00001a81  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	45 c0       	rjmp	.+138    	; 0x8c <__ctors_end>
+   2:	00 00       	nop
+   4:	4b c0       	rjmp	.+150    	; 0x9c <__bad_interrupt>
+   6:	00 00       	nop
+   8:	49 c0       	rjmp	.+146    	; 0x9c <__bad_interrupt>
+   a:	00 00       	nop
+   c:	47 c0       	rjmp	.+142    	; 0x9c <__bad_interrupt>
+   e:	00 00       	nop
+  10:	45 c0       	rjmp	.+138    	; 0x9c <__bad_interrupt>
+  12:	00 00       	nop
+  14:	43 c0       	rjmp	.+134    	; 0x9c <__bad_interrupt>
+  16:	00 00       	nop
+  18:	41 c0       	rjmp	.+130    	; 0x9c <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	3f c0       	rjmp	.+126    	; 0x9c <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	3d c0       	rjmp	.+122    	; 0x9c <__bad_interrupt>
+  22:	00 00       	nop
+  24:	3b c0       	rjmp	.+118    	; 0x9c <__bad_interrupt>
+  26:	00 00       	nop
+  28:	39 c0       	rjmp	.+114    	; 0x9c <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	37 c0       	rjmp	.+110    	; 0x9c <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	35 c0       	rjmp	.+106    	; 0x9c <__bad_interrupt>
+  32:	00 00       	nop
+  34:	33 c0       	rjmp	.+102    	; 0x9c <__bad_interrupt>
+  36:	00 00       	nop
+  38:	31 c0       	rjmp	.+98     	; 0x9c <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	2f c0       	rjmp	.+94     	; 0x9c <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	2d c0       	rjmp	.+90     	; 0x9c <__bad_interrupt>
+  42:	00 00       	nop
+  44:	2b c0       	rjmp	.+86     	; 0x9c <__bad_interrupt>
+  46:	00 00       	nop
+  48:	29 c0       	rjmp	.+82     	; 0x9c <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	27 c0       	rjmp	.+78     	; 0x9c <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	25 c0       	rjmp	.+74     	; 0x9c <__bad_interrupt>
+  52:	00 00       	nop
+  54:	23 c0       	rjmp	.+70     	; 0x9c <__bad_interrupt>
+  56:	00 00       	nop
+  58:	21 c0       	rjmp	.+66     	; 0x9c <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	1f c0       	rjmp	.+62     	; 0x9c <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	1d c0       	rjmp	.+58     	; 0x9c <__bad_interrupt>
+  62:	00 00       	nop
+  64:	1b c0       	rjmp	.+54     	; 0x9c <__bad_interrupt>
+  66:	00 00       	nop
+  68:	19 c0       	rjmp	.+50     	; 0x9c <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	17 c0       	rjmp	.+46     	; 0x9c <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	15 c0       	rjmp	.+42     	; 0x9c <__bad_interrupt>
+  72:	00 00       	nop
+  74:	13 c0       	rjmp	.+38     	; 0x9c <__bad_interrupt>
+  76:	00 00       	nop
+  78:	11 c0       	rjmp	.+34     	; 0x9c <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	0f c0       	rjmp	.+30     	; 0x9c <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	0d c0       	rjmp	.+26     	; 0x9c <__bad_interrupt>
+  82:	00 00       	nop
+  84:	0b c0       	rjmp	.+22     	; 0x9c <__bad_interrupt>
+  86:	00 00       	nop
+  88:	09 c0       	rjmp	.+18     	; 0x9c <__bad_interrupt>
+	...
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e4       	ldi	r29, 0x40	; 64
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+  98:	02 d0       	rcall	.+4      	; 0x9e <main>
+  9a:	18 c1       	rjmp	.+560    	; 0x2cc <_exit>
+
+0000009c <__bad_interrupt>:
+  9c:	b1 cf       	rjmp	.-158    	; 0x0 <__vectors>
+
+0000009e <main>:
+ *	I acknowledge all content contained herein, excluding template or example code, is my own original work.
+ */
+
+#include <avr/io.h>
+
+int main(void) {
+  9e:	cf 93       	push	r28
+  a0:	df 93       	push	r29
+  a2:	00 d0       	rcall	.+0      	; 0xa4 <main+0x6>
+  a4:	cd b7       	in	r28, 0x3d	; 61
+  a6:	de b7       	in	r29, 0x3e	; 62
+	DDRA = 0; PORTA = 0;
+  a8:	81 e2       	ldi	r24, 0x21	; 33
+  aa:	90 e0       	ldi	r25, 0x00	; 0
+  ac:	fc 01       	movw	r30, r24
+  ae:	10 82       	st	Z, r1
+  b0:	82 e2       	ldi	r24, 0x22	; 34
+  b2:	90 e0       	ldi	r25, 0x00	; 0
+  b4:	fc 01       	movw	r30, r24
+  b6:	10 82       	st	Z, r1
+	DDRB = 0; PORTB = 0;
+  b8:	84 e2       	ldi	r24, 0x24	; 36
+  ba:	90 e0       	ldi	r25, 0x00	; 0
+  bc:	fc 01       	movw	r30, r24
+  be:	10 82       	st	Z, r1
+  c0:	85 e2       	ldi	r24, 0x25	; 37
+  c2:	90 e0       	ldi	r25, 0x00	; 0
+  c4:	fc 01       	movw	r30, r24
+  c6:	10 82       	st	Z, r1
+	DDRC = 0xFF; PORTC = 0;
+  c8:	87 e2       	ldi	r24, 0x27	; 39
+  ca:	90 e0       	ldi	r25, 0x00	; 0
+  cc:	2f ef       	ldi	r18, 0xFF	; 255
+  ce:	fc 01       	movw	r30, r24
+  d0:	20 83       	st	Z, r18
+  d2:	88 e2       	ldi	r24, 0x28	; 40
+  d4:	90 e0       	ldi	r25, 0x00	; 0
+  d6:	fc 01       	movw	r30, r24
+  d8:	10 82       	st	Z, r1
+	unsigned short count = 0;
+  da:	1a 82       	std	Y+2, r1	; 0x02
+  dc:	19 82       	std	Y+1, r1	; 0x01
+    /* Replace with your application code */
+    while (1) {
+		count = 0;
+  de:	1a 82       	std	Y+2, r1	; 0x02
+  e0:	19 82       	std	Y+1, r1	; 0x01
+		count = (PORTA & 0x01) + ((PORTA & 0x02) >> 1) + ((PORTA & 0x04) >> 2) + ((PORTA & 0x08) >> 3)
+  e2:	82 e2       	ldi	r24, 0x22	; 34
+  e4:	90 e0       	ldi	r25, 0x00	; 0
+  e6:	fc 01       	movw	r30, r24
+  e8:	80 81       	ld	r24, Z
+  ea:	88 2f       	mov	r24, r24
+  ec:	90 e0       	ldi	r25, 0x00	; 0
+  ee:	9c 01       	movw	r18, r24
+  f0:	21 70       	andi	r18, 0x01	; 1
+  f2:	33 27       	eor	r19, r19
+  f4:	82 e2       	ldi	r24, 0x22	; 34
+  f6:	90 e0       	ldi	r25, 0x00	; 0
+  f8:	fc 01       	movw	r30, r24
+  fa:	80 81       	ld	r24, Z
+  fc:	88 2f       	mov	r24, r24
+  fe:	90 e0       	ldi	r25, 0x00	; 0
+ 100:	82 70       	andi	r24, 0x02	; 2
+ 102:	99 27       	eor	r25, r25
+ 104:	95 95       	asr	r25
+ 106:	87 95       	ror	r24
+ 108:	28 0f       	add	r18, r24
+ 10a:	39 1f       	adc	r19, r25
+ 10c:	82 e2       	ldi	r24, 0x22	; 34
+ 10e:	90 e0       	ldi	r25, 0x00	; 0
+ 110:	fc 01       	movw	r30, r24
+ 112:	80 81       	ld	r24, Z
+ 114:	88 2f       	mov	r24, r24
+ 116:	90 e0       	ldi	r25, 0x00	; 0
+ 118:	84 70       	andi	r24, 0x04	; 4
+ 11a:	99 27       	eor	r25, r25
+ 11c:	95 95       	asr	r25
+ 11e:	87 95       	ror	r24
+ 120:	95 95       	asr	r25
+ 122:	87 95       	ror	r24
+ 124:	28 0f       	add	r18, r24
+ 126:	39 1f       	adc	r19, r25
+ 128:	82 e2       	ldi	r24, 0x22	; 34
+ 12a:	90 e0       	ldi	r25, 0x00	; 0
+ 12c:	fc 01       	movw	r30, r24
+ 12e:	80 81       	ld	r24, Z
+ 130:	88 2f       	mov	r24, r24
+ 132:	90 e0       	ldi	r25, 0x00	; 0
+ 134:	88 70       	andi	r24, 0x08	; 8
+ 136:	99 27       	eor	r25, r25
+ 138:	95 95       	asr	r25
+ 13a:	87 95       	ror	r24
+ 13c:	95 95       	asr	r25
+ 13e:	87 95       	ror	r24
+ 140:	95 95       	asr	r25
+ 142:	87 95       	ror	r24
+ 144:	28 0f       	add	r18, r24
+ 146:	39 1f       	adc	r19, r25
+				+ ((PORTA & 0x10) >> 4) + ((PORTA & 0x20) >> 5) + ((PORTA & 0x40) >> 6) + ((PORTA & 0x80) >> 7)
+ 148:	82 e2       	ldi	r24, 0x22	; 34
+ 14a:	90 e0       	ldi	r25, 0x00	; 0
+ 14c:	fc 01       	movw	r30, r24
+ 14e:	80 81       	ld	r24, Z
+ 150:	88 2f       	mov	r24, r24
+ 152:	90 e0       	ldi	r25, 0x00	; 0
+ 154:	80 71       	andi	r24, 0x10	; 16
+ 156:	99 27       	eor	r25, r25
+ 158:	95 95       	asr	r25
+ 15a:	87 95       	ror	r24
+ 15c:	95 95       	asr	r25
+ 15e:	87 95       	ror	r24
+ 160:	95 95       	asr	r25
+ 162:	87 95       	ror	r24
+ 164:	95 95       	asr	r25
+ 166:	87 95       	ror	r24
+ 168:	28 0f       	add	r18, r24
+ 16a:	39 1f       	adc	r19, r25
+ 16c:	82 e2       	ldi	r24, 0x22	; 34
+ 16e:	90 e0       	ldi	r25, 0x00	; 0
+ 170:	fc 01       	movw	r30, r24
+ 172:	80 81       	ld	r24, Z
+ 174:	88 2f       	mov	r24, r24
+ 176:	90 e0       	ldi	r25, 0x00	; 0
+ 178:	80 72       	andi	r24, 0x20	; 32
+ 17a:	99 27       	eor	r25, r25
+ 17c:	95 95       	asr	r25
+ 17e:	87 95       	ror	r24
+ 180:	95 95       	asr	r25
+ 182:	87 95       	ror	r24
+ 184:	95 95       	asr	r25
+ 186:	87 95       	ror	r24
+ 188:	95 95       	asr	r25
+ 18a:	87 95       	ror	r24
+ 18c:	95 95       	asr	r25
+ 18e:	87 95       	ror	r24
+ 190:	28 0f       	add	r18, r24
+ 192:	39 1f       	adc	r19, r25
+ 194:	82 e2       	ldi	r24, 0x22	; 34
+ 196:	90 e0       	ldi	r25, 0x00	; 0
+ 198:	fc 01       	movw	r30, r24
+ 19a:	80 81       	ld	r24, Z
+ 19c:	88 2f       	mov	r24, r24
+ 19e:	90 e0       	ldi	r25, 0x00	; 0
+ 1a0:	80 74       	andi	r24, 0x40	; 64
+ 1a2:	99 27       	eor	r25, r25
+ 1a4:	08 2e       	mov	r0, r24
+ 1a6:	89 2f       	mov	r24, r25
+ 1a8:	00 0c       	add	r0, r0
+ 1aa:	88 1f       	adc	r24, r24
+ 1ac:	99 0b       	sbc	r25, r25
+ 1ae:	00 0c       	add	r0, r0
+ 1b0:	88 1f       	adc	r24, r24
+ 1b2:	99 1f       	adc	r25, r25
+ 1b4:	28 0f       	add	r18, r24
+ 1b6:	39 1f       	adc	r19, r25
+ 1b8:	82 e2       	ldi	r24, 0x22	; 34
+ 1ba:	90 e0       	ldi	r25, 0x00	; 0
+ 1bc:	fc 01       	movw	r30, r24
+ 1be:	80 81       	ld	r24, Z
+ 1c0:	88 1f       	adc	r24, r24
+ 1c2:	88 27       	eor	r24, r24
+ 1c4:	88 1f       	adc	r24, r24
+ 1c6:	88 2f       	mov	r24, r24
+ 1c8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ca:	28 0f       	add	r18, r24
+ 1cc:	39 1f       	adc	r19, r25
+				+ (PORTB & 0x01) + ((PORTB & 0x02) >> 1) + ((PORTB & 0x04) >> 2) + ((PORTB & 0x08) >> 3)
+ 1ce:	85 e2       	ldi	r24, 0x25	; 37
+ 1d0:	90 e0       	ldi	r25, 0x00	; 0
+ 1d2:	fc 01       	movw	r30, r24
+ 1d4:	80 81       	ld	r24, Z
+ 1d6:	88 2f       	mov	r24, r24
+ 1d8:	90 e0       	ldi	r25, 0x00	; 0
+ 1da:	81 70       	andi	r24, 0x01	; 1
+ 1dc:	99 27       	eor	r25, r25
+ 1de:	28 0f       	add	r18, r24
+ 1e0:	39 1f       	adc	r19, r25
+ 1e2:	85 e2       	ldi	r24, 0x25	; 37
+ 1e4:	90 e0       	ldi	r25, 0x00	; 0
+ 1e6:	fc 01       	movw	r30, r24
+ 1e8:	80 81       	ld	r24, Z
+ 1ea:	88 2f       	mov	r24, r24
+ 1ec:	90 e0       	ldi	r25, 0x00	; 0
+ 1ee:	82 70       	andi	r24, 0x02	; 2
+ 1f0:	99 27       	eor	r25, r25
+ 1f2:	95 95       	asr	r25
+ 1f4:	87 95       	ror	r24
+ 1f6:	28 0f       	add	r18, r24
+ 1f8:	39 1f       	adc	r19, r25
+ 1fa:	85 e2       	ldi	r24, 0x25	; 37
+ 1fc:	90 e0       	ldi	r25, 0x00	; 0
+ 1fe:	fc 01       	movw	r30, r24
+ 200:	80 81       	ld	r24, Z
+ 202:	88 2f       	mov	r24, r24
+ 204:	90 e0       	ldi	r25, 0x00	; 0
+ 206:	84 70       	andi	r24, 0x04	; 4
+ 208:	99 27       	eor	r25, r25
+ 20a:	95 95       	asr	r25
+ 20c:	87 95       	ror	r24
+ 20e:	95 95       	asr	r25
+ 210:	87 95       	ror	r24
+ 212:	28 0f       	add	r18, r24
+ 214:	39 1f       	adc	r19, r25
+ 216:	85 e2       	ldi	r24, 0x25	; 37
+ 218:	90 e0       	ldi	r25, 0x00	; 0
+ 21a:	fc 01       	movw	r30, r24
+ 21c:	80 81       	ld	r24, Z
+ 21e:	88 2f       	mov	r24, r24
+ 220:	90 e0       	ldi	r25, 0x00	; 0
+ 222:	88 70       	andi	r24, 0x08	; 8
+ 224:	99 27       	eor	r25, r25
+ 226:	95 95       	asr	r25
+ 228:	87 95       	ror	r24
+ 22a:	95 95       	asr	r25
+ 22c:	87 95       	ror	r24
+ 22e:	95 95       	asr	r25
+ 230:	87 95       	ror	r24
+ 232:	28 0f       	add	r18, r24
+ 234:	39 1f       	adc	r19, r25
+				+ ((PORTB & 0x10) >> 4) + ((PORTB & 0x20) >> 5) + ((PORTB & 0x40) >> 6) + ((PORTB & 0x80) >> 7);
+ 236:	85 e2       	ldi	r24, 0x25	; 37
+ 238:	90 e0       	ldi	r25, 0x00	; 0
+ 23a:	fc 01       	movw	r30, r24
+ 23c:	80 81       	ld	r24, Z
+ 23e:	88 2f       	mov	r24, r24
+ 240:	90 e0       	ldi	r25, 0x00	; 0
+ 242:	80 71       	andi	r24, 0x10	; 16
+ 244:	99 27       	eor	r25, r25
+ 246:	95 95       	asr	r25
+ 248:	87 95       	ror	r24
+ 24a:	95 95       	asr	r25
+ 24c:	87 95       	ror	r24
+ 24e:	95 95       	asr	r25
+ 250:	87 95       	ror	r24
+ 252:	95 95       	asr	r25
+ 254:	87 95       	ror	r24
+ 256:	28 0f       	add	r18, r24
+ 258:	39 1f       	adc	r19, r25
+ 25a:	85 e2       	ldi	r24, 0x25	; 37
+ 25c:	90 e0       	ldi	r25, 0x00	; 0
+ 25e:	fc 01       	movw	r30, r24
+ 260:	80 81       	ld	r24, Z
+ 262:	88 2f       	mov	r24, r24
+ 264:	90 e0       	ldi	r25, 0x00	; 0
+ 266:	80 72       	andi	r24, 0x20	; 32
+ 268:	99 27       	eor	r25, r25
+ 26a:	95 95       	asr	r25
+ 26c:	87 95       	ror	r24
+ 26e:	95 95       	asr	r25
+ 270:	87 95       	ror	r24
+ 272:	95 95       	asr	r25
+ 274:	87 95       	ror	r24
+ 276:	95 95       	asr	r25
+ 278:	87 95       	ror	r24
+ 27a:	95 95       	asr	r25
+ 27c:	87 95       	ror	r24
+ 27e:	28 0f       	add	r18, r24
+ 280:	39 1f       	adc	r19, r25
+ 282:	85 e2       	ldi	r24, 0x25	; 37
+ 284:	90 e0       	ldi	r25, 0x00	; 0
+ 286:	fc 01       	movw	r30, r24
+ 288:	80 81       	ld	r24, Z
+ 28a:	88 2f       	mov	r24, r24
+ 28c:	90 e0       	ldi	r25, 0x00	; 0
+ 28e:	80 74       	andi	r24, 0x40	; 64
+ 290:	99 27       	eor	r25, r25
+ 292:	08 2e       	mov	r0, r24
+ 294:	89 2f       	mov	r24, r25
+ 296:	00 0c       	add	r0, r0
+ 298:	88 1f       	adc	r24, r24
+ 29a:	99 0b       	sbc	r25, r25
+ 29c:	00 0c       	add	r0, r0
+ 29e:	88 1f       	adc	r24, r24
+ 2a0:	99 1f       	adc	r25, r25
+ 2a2:	28 0f       	add	r18, r24
+ 2a4:	39 1f       	adc	r19, r25
+ 2a6:	85 e2       	ldi	r24, 0x25	; 37
+ 2a8:	90 e0       	ldi	r25, 0x00	; 0
+ 2aa:	fc 01       	movw	r30, r24
+ 2ac:	80 81       	ld	r24, Z
+ 2ae:	88 1f       	adc	r24, r24
+ 2b0:	88 27       	eor	r24, r24
+ 2b2:	88 1f       	adc	r24, r24
+ 2b4:	88 2f       	mov	r24, r24
+ 2b6:	90 e0       	ldi	r25, 0x00	; 0
+ 2b8:	82 0f       	add	r24, r18
+ 2ba:	93 1f       	adc	r25, r19
+	DDRC = 0xFF; PORTC = 0;
+	unsigned short count = 0;
+    /* Replace with your application code */
+    while (1) {
+		count = 0;
+		count = (PORTA & 0x01) + ((PORTA & 0x02) >> 1) + ((PORTA & 0x04) >> 2) + ((PORTA & 0x08) >> 3)
+ 2bc:	9a 83       	std	Y+2, r25	; 0x02
+ 2be:	89 83       	std	Y+1, r24	; 0x01
+				+ ((PORTA & 0x10) >> 4) + ((PORTA & 0x20) >> 5) + ((PORTA & 0x40) >> 6) + ((PORTA & 0x80) >> 7)
+				+ (PORTB & 0x01) + ((PORTB & 0x02) >> 1) + ((PORTB & 0x04) >> 2) + ((PORTB & 0x08) >> 3)
+				+ ((PORTB & 0x10) >> 4) + ((PORTB & 0x20) >> 5) + ((PORTB & 0x40) >> 6) + ((PORTB & 0x80) >> 7);
+		PORTC = count;
+ 2c0:	88 e2       	ldi	r24, 0x28	; 40
+ 2c2:	90 e0       	ldi	r25, 0x00	; 0
+ 2c4:	29 81       	ldd	r18, Y+1	; 0x01
+ 2c6:	fc 01       	movw	r30, r24
+ 2c8:	20 83       	st	Z, r18
+    }
+ 2ca:	09 cf       	rjmp	.-494    	; 0xde <main+0x40>
+
+000002cc <_exit>:
+ 2cc:	f8 94       	cli
+
+000002ce <__stop_program>:
+ 2ce:	ff cf       	rjmp	.-2      	; 0x2ce <__stop_program>
