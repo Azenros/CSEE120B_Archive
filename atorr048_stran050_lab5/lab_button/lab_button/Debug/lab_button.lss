@@ -137,13 +137,13 @@ int main(void)
   b4:	2f ef       	ldi	r18, 0xFF	; 255
   b6:	fc 01       	movw	r30, r24
   b8:	20 83       	st	Z, r18
-	DDRC = 0xFF; PORTC = 0x00; // Configure PORTB as outputs, initialize to 0s
-  ba:	87 e2       	ldi	r24, 0x27	; 39
+	DDRB = 0xFF; PORTB = 0x00; // Configure PORTB as outputs, initialize to 0s
+  ba:	84 e2       	ldi	r24, 0x24	; 36
   bc:	90 e0       	ldi	r25, 0x00	; 0
   be:	2f ef       	ldi	r18, 0xFF	; 255
   c0:	fc 01       	movw	r30, r24
   c2:	20 83       	st	Z, r18
-  c4:	88 e2       	ldi	r24, 0x28	; 40
+  c4:	85 e2       	ldi	r24, 0x25	; 37
   c6:	90 e0       	ldi	r25, 0x00	; 0
   c8:	fc 01       	movw	r30, r24
   ca:	10 82       	st	Z, r1
@@ -191,8 +191,8 @@ int main(void)
 			// (clear rightmost 2 bits, then set to 10)
 		}
 		// 3) Write output
-		PORTC = led;
- 102:	88 e2       	ldi	r24, 0x28	; 40
+		PORTB = led;
+ 102:	85 e2       	ldi	r24, 0x25	; 37
  104:	90 e0       	ldi	r25, 0x00	; 0
  106:	29 81       	ldd	r18, Y+1	; 0x01
  108:	fc 01       	movw	r30, r24

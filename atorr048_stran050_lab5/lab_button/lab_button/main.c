@@ -1,9 +1,9 @@
-/*
- * lab_button.c
- *
- * Created: 1/22/2019 1:06:24 PM
- * Author : ruzst
- */ 
+/*	Partner(s) Name & E-mail: Steven Tran (stran050@ucr.edu), Austin Torreflores (atorr048@ucr.edu)
+ *	Lab Section: 22
+ *	Assignment: Lab # 5 Exercise # Lab_button
+ *	
+ *	I acknowledge all content contained herein, excluding template or example code, is my own original work.
+ */
 
 #include <avr/io.h>
 
@@ -11,7 +11,7 @@
 int main(void)
 {
 	DDRA = 0x00; PORTA = 0xFF; // Configure PORTA as input, initialize to 1s
-	DDRC = 0xFF; PORTC = 0x00; // Configure PORTB as outputs, initialize to 0s
+	DDRB = 0xFF; PORTB = 0x00; // Configure PORTB as outputs, initialize to 0s
 	unsigned char led = 0x00;
 	unsigned char button = 0x00;
 	while(1)
@@ -29,7 +29,7 @@ int main(void)
 			// (clear rightmost 2 bits, then set to 10)
 		}
 		// 3) Write output
-		PORTC = led;
+		PORTB = led;
 	}
 }
 
