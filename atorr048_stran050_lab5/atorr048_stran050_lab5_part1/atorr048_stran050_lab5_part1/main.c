@@ -8,13 +8,21 @@
 
 
 int main(void) {
-    DDRA = 0; PORTA = 0xFF;
-	DDRC = 0xFF; PORTC = 0;
+    DDRA = 0x00; PORTA = 0x00;
+	DDRC = 0xFF; PORTC = 0x00;
 	unsigned char tmpA;
 	unsigned char tmpC;
+	unsigned char button1;
+	unsigned char button2;
+	unsigned char button3;
+	unsigned char button4;
     while (1) {
 		tmpC = 0;
-		tmpA = PORTA & 0x0F;
+		button1 = PINA & 0x01;
+		button2 = PINA & 0x02;
+		button3 = PINA & 0x04;
+		button4 = PINA & 0x08; 
+		tmpA = button1 | button2 | button3 | button4;
 		if (tmpA >= 13) {
 			tmpC = tmpC | 0x3F;
 		}

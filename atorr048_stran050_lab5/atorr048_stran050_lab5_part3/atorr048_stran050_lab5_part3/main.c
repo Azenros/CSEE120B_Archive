@@ -1,9 +1,9 @@
-/*
- * lab_button.c
- *
- * Created: 1/22/2019 1:06:24 PM
- * Author : ruzst
- */ 
+/*	Partner(s) Name & E-mail: Steven Tran (stran050@ucr.edu), Austin Torreflores (atorr048@ucr.edu)
+ *	Lab Section: 22
+ *	Assignment: Lab # 5 Exercise # 3
+ *	
+ *	I acknowledge all content contained herein, excluding template or example code, is my own original work.
+ */
 
 #include <avr/io.h>
 

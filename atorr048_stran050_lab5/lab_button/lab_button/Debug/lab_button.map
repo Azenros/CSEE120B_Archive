@@ -151,7 +151,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000       0xbe
+.text           0x00000000      0x112
  *(.vectors)
  .vectors       0x00000000       0x8c C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
                 0x00000000                __vector_default
@@ -243,13 +243,13 @@ END GROUP
                 0x0000009c                __vector_20
                 0x0000009e                . = ALIGN (0x2)
  *(.text.*)
- .text.main     0x0000009e       0x1c main.o
+ .text.main     0x0000009e       0x70 main.o
                 0x0000009e                main
-                0x000000ba                . = ALIGN (0x2)
+                0x0000010e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000000ba        0x0 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
-                0x000000ba                _exit
-                0x000000ba                exit
+ .fini9         0x0000010e        0x0 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+                0x0000010e                _exit
+                0x0000010e                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -268,11 +268,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000000ba        0x4 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .fini0         0x0000010e        0x4 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  *(.fini0)
-                0x000000be                _etext = .
+                0x00000112                _etext = .
 
-.data           0x00800100        0x0 load address 0x000000be
+.data           0x00800100        0x0 load address 0x00000112
                 [!provide]                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -290,8 +290,8 @@ END GROUP
  *(.bss*)
  *(COMMON)
                 [!provide]                PROVIDE (__bss_end, .)
-                0x000000be                __data_load_start = LOADADDR (.data)
-                0x000000be                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000112                __data_load_start = LOADADDR (.data)
+                0x00000112                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800100        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -370,34 +370,34 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x839
+.debug_info     0x00000000      0x836
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x792 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .debug_info    0x00000792       0xa7 main.o
+ .debug_info    0x00000792       0xa4 main.o
 
-.debug_abbrev   0x00000000      0x79d
+.debug_abbrev   0x00000000      0x79a
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x729 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .debug_abbrev  0x00000729       0x74 main.o
+ .debug_abbrev  0x00000729       0x71 main.o
 
-.debug_line     0x00000000      0x233
+.debug_line     0x00000000      0x239
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x169 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .debug_line    0x00000169       0xca main.o
+ .debug_line    0x00000169       0xd0 main.o
 
-.debug_frame    0x00000000       0x24
+.debug_frame    0x00000000       0x34
  *(.debug_frame)
- .debug_frame   0x00000000       0x24 main.o
+ .debug_frame   0x00000000       0x34 main.o
 
-.debug_str      0x00000000      0x3f3
+.debug_str      0x00000000      0x3e5
  *(.debug_str)
  .debug_str     0x00000000      0x296 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .debug_str     0x00000296      0x15d main.o
-                                0x191 (size before relaxing)
+ .debug_str     0x00000296      0x14f main.o
+                                0x183 (size before relaxing)
 
-.debug_loc      0x00000000       0x33
+.debug_loc      0x00000000       0x48
  *(.debug_loc)
- .debug_loc     0x00000000       0x33 main.o
+ .debug_loc     0x00000000       0x48 main.o
 
 .debug_macinfo
  *(.debug_macinfo)
