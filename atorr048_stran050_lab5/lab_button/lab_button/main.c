@@ -7,7 +7,6 @@
 
 #include <avr/io.h>
 
-
 int main(void)
 {
 	DDRA = 0x00; PORTA = 0xFF; // Configure PORTA as input, initialize to 1s
@@ -32,5 +31,6 @@ int main(void)
 		PORTB = led;
 	}
 }
+
 
 
