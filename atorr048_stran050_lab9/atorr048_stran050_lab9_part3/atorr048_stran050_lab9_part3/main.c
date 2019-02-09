@@ -1,14 +1,20 @@
 /*	Partner(s) Name & E-mail: Steven Tran (stran050@ucr.edu), Austin Torreflores (atorr048@ucr.edu)
  *	Lab Section: 22
- *	Assignment: Lab # 9 Exercise # 1
+ *	Assignment: Lab # 9 Exercise # 3
  *	
  *	I acknowledge all content contained herein, excluding template or example code, is my own original work.
  */
 
 #include <avr/io.h>
-enum States{Start, Idle, C, D, E}state;
+enum States{Start, Idle, Play}state;
 unsigned char tmpA = 0x00;
 
+double series[] = {};
+int time_hold[] = {};
+int in_between[] = {};
+unsigned char note = 0x00;
+unsigned short i = 0x00;
+ 
 void set_PWM(double frequency) {
 	// 0.954 hz is lowest frequency possible with this function,
 	// based on settings in PWM_on()
@@ -24,7 +30,8 @@ void set_PWM(double frequency) {
 		// 0.954 is smallest frequency that will not result in overflow
 		if (frequency < 0.954) { OCR0A = 0xFFFF; }
 		
-		// prevents OCR0A from underflowing, using prescaler 64					// 31250 is largest frequency that will not result in underflow
+		// prevents OCR0A from underflowing, using prescaler 64					
+		// 31250 is largest frequency that will not result in underflow
 		else if (frequency > 31250) { OCR0A = 0x0000; }
 		
 		// set OCR3A based on desired frequency
@@ -41,7 +48,7 @@ void PWM_on() {
 	// WGM02: When counter (TCNT0) matches OCR0A, reset counter
 	// CS01 & CS30: Set a prescaler of 64
 	set_PWM(0);
-}
+}	  
 void PWM_off() {
 	TCCR0A = 0x00;
 	TCCR0B = 0x00;
@@ -49,47 +56,18 @@ void PWM_off() {
 
 void Tick() {
 	switch (state) {
-		case Start: state = Idle; break;
-		case Idle:
-			if (tmpA == 0x04) {
-				state = C;
-			} 
-			else if (tmpA == 0x02) {
-				state = D;
-			}
-			else if (tmpA == 0x01) {
-				state = E;
-			}
-			else {
-				state = Idle;
-			}
-			break;
-		case C:
-			state = (tmpA == 0x04) ? C : Idle;
-			break;
-		case D:
-			state = (tmpA == 0x02) ? D : Idle;
-			break;
-		case E:
-			state = (tmpA == 0x01) ? E : Idle;
+		case Start: state = Idle;
+		case Idle: state = (tmpA == 0x01) ? Play : Idle;
+		case Play: 
 			break;
 		default: break;
 	}
 	switch (state) {
 		case Start: break;
-		case Idle:
-			set_PWM(0); 
+		case Idle: break;
+		case Play:
+			
 			break;
-		case C:
-			set_PWM(261.63);
-			break;
-		case D:
-			set_PWM(293.66);
-			break;
-		case E:
-			set_PWM(329.63);
-			break;
-		default: break;
 	}
 }
 
@@ -99,9 +77,8 @@ int main(void) {
 	PWM_on();
 
     while (1) {
-		tmpA = ~PINA & 0x07;
+		tmpA = ~PINA & 0x01;
 		Tick();
-		
 		
     }
 }

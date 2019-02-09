@@ -1,13 +1,17 @@
 /*	Partner(s) Name & E-mail: Steven Tran (stran050@ucr.edu), Austin Torreflores (atorr048@ucr.edu)
  *	Lab Section: 22
- *	Assignment: Lab # 9 Exercise # 1
+ *	Assignment: Lab # 9 Exercise # 2
  *	
  *	I acknowledge all content contained herein, excluding template or example code, is my own original work.
  */
 
 #include <avr/io.h>
-enum States{Start, Idle, C, D, E}state;
+enum States{Start, Idle, Run, Wait}state;
 unsigned char tmpA = 0x00;
+unsigned char toggle = 0x00;
+double frequencies[] = {261.63, 293.66, 329.63, 349.23, 392, 440, 493.88, 523.25};
+unsigned char freq_at = 0;
+
 
 void set_PWM(double frequency) {
 	// 0.954 hz is lowest frequency possible with this function,
@@ -50,44 +54,47 @@ void PWM_off() {
 void Tick() {
 	switch (state) {
 		case Start: state = Idle; break;
-		case Idle:
+		case Idle: state = (toggle) ? Run : Idle; break;
+		case Run:
 			if (tmpA == 0x04) {
-				state = C;
-			} 
-			else if (tmpA == 0x02) {
-				state = D;
+				toggle = 0;
+				state = Wait;
 			}
-			else if (tmpA == 0x01) {
-				state = E;
-			}
-			else {
-				state = Idle;
-			}
-			break;
-		case C:
-			state = (tmpA == 0x04) ? C : Idle;
-			break;
-		case D:
-			state = (tmpA == 0x02) ? D : Idle;
-			break;
-		case E:
-			state = (tmpA == 0x01) ? E : Idle;
-			break;
 		default: break;
 	}
 	switch (state) {
 		case Start: break;
 		case Idle:
-			set_PWM(0); 
+			if (tmpA == 0x04) {
+				toggle = 1;
+				state = Wait;
+			}
+			set_PWM(0);
 			break;
-		case C:
-			set_PWM(261.63);
+		case Run:
+			if (tmpA == 0x04) {
+				toggle = 0;
+				state = Wait;
+			}
+			else if (tmpA == 0x02 && freq_at < 7) { // going up
+				freq_at++;
+				state = Wait;
+			}
+			else if (tmpA == 0x01 && freq_at > 0) { // going down
+				freq_at--;
+				state = Wait;
+			}
+			set_PWM(frequencies[freq_at]);
 			break;
-		case D:
-			set_PWM(293.66);
-			break;
-		case E:
-			set_PWM(329.63);
+		case Wait:
+			if (tmpA == 0x00) {
+				if (toggle) {
+					state = Run;
+				}
+				else {
+					state = Idle;
+				}
+			}
 			break;
 		default: break;
 	}
