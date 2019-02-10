@@ -6,14 +6,32 @@
  */
 
 #include <avr/io.h>
-enum States{Start, Idle, Play}state;
+enum States{Start, Idle, Play, Rest} state;
 unsigned char tmpA = 0x00;
-
-double series[] = {};
-int time_hold[] = {};
-int in_between[] = {};
 unsigned char note = 0x00;
-unsigned short i = 0x00;
+unsigned short note_size;
+unsigned short i = 0;
+
+// double notes[] = {293.65, 293.65, 587.33, 440, 415.31, 392, 349.23, 293.65, 349.23, 392,
+// 				  261.63, 261.63, 587.33, 440, 415.31, 392, 349.23, 293.65, 349.23, 392,
+// 				  246.94, 246.94, 587.33, 440, 415.31, 392, 349.23, 293.65, 349.23, 392,
+// 				  220, 220, 587.33, 440, 415.31, 392, 349.23, 293.65, 349.23, 392, 0};
+				  
+double notes[] = {587.33, 587.33, 1174.66, 880, 830.61, 784, 698.46, 587.33, 698.46, 784,
+				  523.25, 523.25, 1174.66, 880, 830.61, 784, 698.46, 587.33, 698.46, 784,
+				  493.88, 493.88, 1174.66, 880, 830.61, 784, 698.46, 587.33, 698.46, 784,
+				  440, 440, 1174.66, 880, 830.61, 784, 698.46, 587.33, 698.46, 784, 0};
+				  
+int time_hold[] = {2000, 2000, 4000, 4000, 5000, 5000, 6000, 2000, 2000, 2000,
+				   2000, 2000, 4000, 4000, 5000, 5000, 6000, 2000, 2000, 2000,
+				   2000, 2000, 4000, 4000, 5000, 5000, 6000, 2000, 2000, 2000,
+				   2000, 2000, 4000, 4000, 5000, 5000, 6000, 2000, 2000, 2000};
+				   
+int in_between[] = {2000, 2000, 3000, 10000, 2000, 2000, 1000, 2000, 1000, 1000,
+				    2000, 2000, 3000, 10000, 2000, 2000, 1000, 2000, 1000, 1000,
+					2000, 2000, 3000, 10000, 2000, 2000, 1000, 2000, 1000, 1000,
+					2000, 2000, 3000, 10000, 2000, 2000, 1000, 2000, 1000, 1000};
+
  
 void set_PWM(double frequency) {
 	// 0.954 hz is lowest frequency possible with this function,
@@ -56,18 +74,39 @@ void PWM_off() {
 
 void Tick() {
 	switch (state) {
-		case Start: state = Idle;
-		case Idle: state = (tmpA == 0x01) ? Play : Idle;
+		case Start: state = Idle; break;
+		case Idle: state = (tmpA == 0x01) ? Play : Idle; break;
 		case Play: 
+			if (notes[note] == 0) {
+				state = Idle;
+				i = 0; note = 0;
+			}
+			else if (i >= time_hold[note]) {
+				state = Rest;
+				i = 0;
+			}
+			break;
+		case Rest:
+			if (i >= in_between[note]) {
+				state = Play;
+				i = 0;
+				note++;
+			}
 			break;
 		default: break;
 	}
 	switch (state) {
 		case Start: break;
-		case Idle: break;
+		case Idle: i = 0; note = 0; break;
 		case Play:
-			
+			set_PWM(notes[note]);
+			i++;
 			break;
+		case Rest:
+			set_PWM(0);
+			i++;
+			break;	
+		default: break;
 	}
 }
 
@@ -75,7 +114,11 @@ int main(void) {
 	DDRA = 0x00; PORTA = 0xFF;
     DDRB = 0x08; PORTB = 0x00;
 	PWM_on();
-
+	while (notes[note] != 0) {
+		note_size++;
+		note++;
+	}
+	note = 0;
     while (1) {
 		tmpA = ~PINA & 0x01;
 		Tick();
