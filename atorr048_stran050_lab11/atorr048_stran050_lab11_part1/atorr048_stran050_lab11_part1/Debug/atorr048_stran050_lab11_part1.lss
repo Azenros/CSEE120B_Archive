@@ -1,0 +1,658 @@
+
+atorr048_stran050_lab11_part1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  0000047a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000426  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  0000047a  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000004ac  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000038  00000000  00000000  000004ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000008c3  00000000  00000000  00000524  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000007dd  00000000  00000000  00000de7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000469  00000000  00000000  000015c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000094  00000000  00000000  00001a30  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000436  00000000  00000000  00001ac4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000113  00000000  00000000  00001efa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000028  00000000  00000000  0000200d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	8a c0       	rjmp	.+276    	; 0x116 <__ctors_end>
+   2:	00 00       	nop
+   4:	90 c0       	rjmp	.+288    	; 0x126 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	8e c0       	rjmp	.+284    	; 0x126 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	8c c0       	rjmp	.+280    	; 0x126 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	8a c0       	rjmp	.+276    	; 0x126 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	88 c0       	rjmp	.+272    	; 0x126 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	86 c0       	rjmp	.+268    	; 0x126 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	84 c0       	rjmp	.+264    	; 0x126 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	82 c0       	rjmp	.+260    	; 0x126 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	80 c0       	rjmp	.+256    	; 0x126 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	7e c0       	rjmp	.+252    	; 0x126 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	7c c0       	rjmp	.+248    	; 0x126 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	7a c0       	rjmp	.+244    	; 0x126 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	78 c0       	rjmp	.+240    	; 0x126 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	76 c0       	rjmp	.+236    	; 0x126 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	74 c0       	rjmp	.+232    	; 0x126 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	72 c0       	rjmp	.+228    	; 0x126 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	70 c0       	rjmp	.+224    	; 0x126 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	6e c0       	rjmp	.+220    	; 0x126 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	6c c0       	rjmp	.+216    	; 0x126 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	6a c0       	rjmp	.+212    	; 0x126 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	68 c0       	rjmp	.+208    	; 0x126 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	66 c0       	rjmp	.+204    	; 0x126 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	64 c0       	rjmp	.+200    	; 0x126 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	62 c0       	rjmp	.+196    	; 0x126 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	60 c0       	rjmp	.+192    	; 0x126 <__bad_interrupt>
+  66:	00 00       	nop
+  68:	5e c0       	rjmp	.+188    	; 0x126 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	5c c0       	rjmp	.+184    	; 0x126 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	5a c0       	rjmp	.+180    	; 0x126 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	58 c0       	rjmp	.+176    	; 0x126 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	56 c0       	rjmp	.+172    	; 0x126 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	54 c0       	rjmp	.+168    	; 0x126 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	52 c0       	rjmp	.+164    	; 0x126 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	50 c0       	rjmp	.+160    	; 0x126 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	4e c0       	rjmp	.+156    	; 0x126 <__bad_interrupt>
+  8a:	00 00       	nop
+  8c:	9c 01       	movw	r18, r24
+  8e:	01 02       	muls	r16, r17
+  90:	01 02       	muls	r16, r17
+  92:	01 02       	muls	r16, r17
+  94:	01 02       	muls	r16, r17
+  96:	01 02       	muls	r16, r17
+  98:	01 02       	muls	r16, r17
+  9a:	01 02       	muls	r16, r17
+  9c:	01 02       	muls	r16, r17
+  9e:	01 02       	muls	r16, r17
+  a0:	01 02       	muls	r16, r17
+  a2:	01 02       	muls	r16, r17
+  a4:	01 02       	muls	r16, r17
+  a6:	01 02       	muls	r16, r17
+  a8:	01 02       	muls	r16, r17
+  aa:	01 02       	muls	r16, r17
+  ac:	01 02       	muls	r16, r17
+  ae:	01 02       	muls	r16, r17
+  b0:	01 02       	muls	r16, r17
+  b2:	01 02       	muls	r16, r17
+  b4:	01 02       	muls	r16, r17
+  b6:	01 02       	muls	r16, r17
+  b8:	01 02       	muls	r16, r17
+  ba:	01 02       	muls	r16, r17
+  bc:	01 02       	muls	r16, r17
+  be:	01 02       	muls	r16, r17
+  c0:	01 02       	muls	r16, r17
+  c2:	01 02       	muls	r16, r17
+  c4:	01 02       	muls	r16, r17
+  c6:	01 02       	muls	r16, r17
+  c8:	01 02       	muls	r16, r17
+  ca:	01 02       	muls	r16, r17
+  cc:	01 02       	muls	r16, r17
+  ce:	01 02       	muls	r16, r17
+  d0:	01 02       	muls	r16, r17
+  d2:	fb 01       	movw	r30, r22
+  d4:	01 02       	muls	r16, r17
+  d6:	01 02       	muls	r16, r17
+  d8:	01 02       	muls	r16, r17
+  da:	01 02       	muls	r16, r17
+  dc:	01 02       	muls	r16, r17
+  de:	01 02       	muls	r16, r17
+  e0:	f0 01       	movw	r30, r0
+  e2:	01 02       	muls	r16, r17
+  e4:	01 02       	muls	r16, r17
+  e6:	01 02       	muls	r16, r17
+  e8:	01 02       	muls	r16, r17
+  ea:	01 02       	muls	r16, r17
+  ec:	f6 01       	movw	r30, r12
+  ee:	a2 01       	movw	r20, r4
+  f0:	a8 01       	movw	r20, r16
+  f2:	ae 01       	movw	r20, r28
+  f4:	b4 01       	movw	r22, r8
+  f6:	ba 01       	movw	r22, r20
+  f8:	c0 01       	movw	r24, r0
+  fa:	c6 01       	movw	r24, r12
+  fc:	cc 01       	movw	r24, r24
+  fe:	d2 01       	movw	r26, r4
+ 100:	01 02       	muls	r16, r17
+ 102:	01 02       	muls	r16, r17
+ 104:	01 02       	muls	r16, r17
+ 106:	01 02       	muls	r16, r17
+ 108:	01 02       	muls	r16, r17
+ 10a:	01 02       	muls	r16, r17
+ 10c:	01 02       	muls	r16, r17
+ 10e:	d8 01       	movw	r26, r16
+ 110:	de 01       	movw	r26, r28
+ 112:	e4 01       	movw	r28, r8
+ 114:	ea 01       	movw	r28, r20
+
+00000116 <__ctors_end>:
+ 116:	11 24       	eor	r1, r1
+ 118:	1f be       	out	0x3f, r1	; 63
+ 11a:	cf ef       	ldi	r28, 0xFF	; 255
+ 11c:	d0 e4       	ldi	r29, 0x40	; 64
+ 11e:	de bf       	out	0x3e, r29	; 62
+ 120:	cd bf       	out	0x3d, r28	; 61
+ 122:	db d0       	rcall	.+438    	; 0x2da <main>
+ 124:	7e c1       	rjmp	.+764    	; 0x422 <_exit>
+
+00000126 <__bad_interrupt>:
+ 126:	6c cf       	rjmp	.-296    	; 0x0 <__vectors>
+
+00000128 <GetBit>:
+////////////////////////////////////////////////////////////////////////////////
+//Functionality - Gets bit from a PINx
+//Parameter: Takes in a uChar for a PINx and the pin number
+//Returns: The value of the PINx
+unsigned char GetBit(unsigned char port, unsigned char number) 
+{
+ 128:	cf 93       	push	r28
+ 12a:	df 93       	push	r29
+ 12c:	00 d0       	rcall	.+0      	; 0x12e <GetBit+0x6>
+ 12e:	cd b7       	in	r28, 0x3d	; 61
+ 130:	de b7       	in	r29, 0x3e	; 62
+ 132:	89 83       	std	Y+1, r24	; 0x01
+ 134:	6a 83       	std	Y+2, r22	; 0x02
+	return ( port & (0x01 << number) );
+ 136:	8a 81       	ldd	r24, Y+2	; 0x02
+ 138:	28 2f       	mov	r18, r24
+ 13a:	30 e0       	ldi	r19, 0x00	; 0
+ 13c:	81 e0       	ldi	r24, 0x01	; 1
+ 13e:	90 e0       	ldi	r25, 0x00	; 0
+ 140:	02 c0       	rjmp	.+4      	; 0x146 <GetBit+0x1e>
+ 142:	88 0f       	add	r24, r24
+ 144:	99 1f       	adc	r25, r25
+ 146:	2a 95       	dec	r18
+ 148:	e2 f7       	brpl	.-8      	; 0x142 <GetBit+0x1a>
+ 14a:	98 2f       	mov	r25, r24
+ 14c:	89 81       	ldd	r24, Y+1	; 0x01
+ 14e:	89 23       	and	r24, r25
+}
+ 150:	0f 90       	pop	r0
+ 152:	0f 90       	pop	r0
+ 154:	df 91       	pop	r29
+ 156:	cf 91       	pop	r28
+ 158:	08 95       	ret
+
+0000015a <GetKeypadKey>:
+PC0 1   1 | 2 | 3 | A
+PC1 2   4 | 5 | 6 | B
+PC2 3   7 | 8 | 9 | C
+PC3 4   * | 0 | # | D
+*/
+unsigned char GetKeypadKey() {
+ 15a:	cf 93       	push	r28
+ 15c:	df 93       	push	r29
+ 15e:	cd b7       	in	r28, 0x3d	; 61
+ 160:	de b7       	in	r29, 0x3e	; 62
+
+	PORTC = 0xEF; // Enable col 4 with 0, disable others with 1’s
+ 162:	88 e2       	ldi	r24, 0x28	; 40
+ 164:	90 e0       	ldi	r25, 0x00	; 0
+ 166:	2f ee       	ldi	r18, 0xEF	; 239
+ 168:	fc 01       	movw	r30, r24
+ 16a:	20 83       	st	Z, r18
+	asm("nop"); // add a delay to allow PORTC to stabilize before checking
+ 16c:	00 00       	nop
+	if (GetBit(PINC,0)==0) { return('1'); }
+ 16e:	86 e2       	ldi	r24, 0x26	; 38
+ 170:	90 e0       	ldi	r25, 0x00	; 0
+ 172:	fc 01       	movw	r30, r24
+ 174:	80 81       	ld	r24, Z
+ 176:	60 e0       	ldi	r22, 0x00	; 0
+ 178:	d7 df       	rcall	.-82     	; 0x128 <GetBit>
+ 17a:	88 23       	and	r24, r24
+ 17c:	11 f4       	brne	.+4      	; 0x182 <GetKeypadKey+0x28>
+ 17e:	81 e3       	ldi	r24, 0x31	; 49
+ 180:	a9 c0       	rjmp	.+338    	; 0x2d4 <GetKeypadKey+0x17a>
+	if (GetBit(PINC,1)==0) { return('4'); }
+ 182:	86 e2       	ldi	r24, 0x26	; 38
+ 184:	90 e0       	ldi	r25, 0x00	; 0
+ 186:	fc 01       	movw	r30, r24
+ 188:	80 81       	ld	r24, Z
+ 18a:	61 e0       	ldi	r22, 0x01	; 1
+ 18c:	cd df       	rcall	.-102    	; 0x128 <GetBit>
+ 18e:	88 23       	and	r24, r24
+ 190:	11 f4       	brne	.+4      	; 0x196 <GetKeypadKey+0x3c>
+ 192:	84 e3       	ldi	r24, 0x34	; 52
+ 194:	9f c0       	rjmp	.+318    	; 0x2d4 <GetKeypadKey+0x17a>
+	if (GetBit(PINC,2)==0) { return('7'); }
+ 196:	86 e2       	ldi	r24, 0x26	; 38
+ 198:	90 e0       	ldi	r25, 0x00	; 0
+ 19a:	fc 01       	movw	r30, r24
+ 19c:	80 81       	ld	r24, Z
+ 19e:	62 e0       	ldi	r22, 0x02	; 2
+ 1a0:	c3 df       	rcall	.-122    	; 0x128 <GetBit>
+ 1a2:	88 23       	and	r24, r24
+ 1a4:	11 f4       	brne	.+4      	; 0x1aa <GetKeypadKey+0x50>
+ 1a6:	87 e3       	ldi	r24, 0x37	; 55
+ 1a8:	95 c0       	rjmp	.+298    	; 0x2d4 <GetKeypadKey+0x17a>
+	if (GetBit(PINC,3)==0) { return('*'); }
+ 1aa:	86 e2       	ldi	r24, 0x26	; 38
+ 1ac:	90 e0       	ldi	r25, 0x00	; 0
+ 1ae:	fc 01       	movw	r30, r24
+ 1b0:	80 81       	ld	r24, Z
+ 1b2:	63 e0       	ldi	r22, 0x03	; 3
+ 1b4:	b9 df       	rcall	.-142    	; 0x128 <GetBit>
+ 1b6:	88 23       	and	r24, r24
+ 1b8:	11 f4       	brne	.+4      	; 0x1be <GetKeypadKey+0x64>
+ 1ba:	8a e2       	ldi	r24, 0x2A	; 42
+ 1bc:	8b c0       	rjmp	.+278    	; 0x2d4 <GetKeypadKey+0x17a>
+
+	// Check keys in col 2
+	PORTC = 0xDF; // Enable col 5 with 0, disable others with 1’s
+ 1be:	88 e2       	ldi	r24, 0x28	; 40
+ 1c0:	90 e0       	ldi	r25, 0x00	; 0
+ 1c2:	2f ed       	ldi	r18, 0xDF	; 223
+ 1c4:	fc 01       	movw	r30, r24
+ 1c6:	20 83       	st	Z, r18
+	asm("nop"); // add a delay to allow PORTC to stabilize before checking
+ 1c8:	00 00       	nop
+	if (GetBit(PINC,0)==0) { return('2'); }
+ 1ca:	86 e2       	ldi	r24, 0x26	; 38
+ 1cc:	90 e0       	ldi	r25, 0x00	; 0
+ 1ce:	fc 01       	movw	r30, r24
+ 1d0:	80 81       	ld	r24, Z
+ 1d2:	60 e0       	ldi	r22, 0x00	; 0
+ 1d4:	a9 df       	rcall	.-174    	; 0x128 <GetBit>
+ 1d6:	88 23       	and	r24, r24
+ 1d8:	11 f4       	brne	.+4      	; 0x1de <GetKeypadKey+0x84>
+ 1da:	82 e3       	ldi	r24, 0x32	; 50
+ 1dc:	7b c0       	rjmp	.+246    	; 0x2d4 <GetKeypadKey+0x17a>
+	if (GetBit(PINC,1)==0) { return('5'); }
+ 1de:	86 e2       	ldi	r24, 0x26	; 38
+ 1e0:	90 e0       	ldi	r25, 0x00	; 0
+ 1e2:	fc 01       	movw	r30, r24
+ 1e4:	80 81       	ld	r24, Z
+ 1e6:	61 e0       	ldi	r22, 0x01	; 1
+ 1e8:	9f df       	rcall	.-194    	; 0x128 <GetBit>
+ 1ea:	88 23       	and	r24, r24
+ 1ec:	11 f4       	brne	.+4      	; 0x1f2 <GetKeypadKey+0x98>
+ 1ee:	85 e3       	ldi	r24, 0x35	; 53
+	if (GetBit(PINC,2)==0) { return('8'); }
+ 1f0:	71 c0       	rjmp	.+226    	; 0x2d4 <GetKeypadKey+0x17a>
+ 1f2:	86 e2       	ldi	r24, 0x26	; 38
+ 1f4:	90 e0       	ldi	r25, 0x00	; 0
+ 1f6:	fc 01       	movw	r30, r24
+ 1f8:	80 81       	ld	r24, Z
+ 1fa:	62 e0       	ldi	r22, 0x02	; 2
+ 1fc:	95 df       	rcall	.-214    	; 0x128 <GetBit>
+ 1fe:	88 23       	and	r24, r24
+ 200:	11 f4       	brne	.+4      	; 0x206 <GetKeypadKey+0xac>
+ 202:	88 e3       	ldi	r24, 0x38	; 56
+	if (GetBit(PINC,3)==0) { return('0'); }
+ 204:	67 c0       	rjmp	.+206    	; 0x2d4 <GetKeypadKey+0x17a>
+ 206:	86 e2       	ldi	r24, 0x26	; 38
+ 208:	90 e0       	ldi	r25, 0x00	; 0
+ 20a:	fc 01       	movw	r30, r24
+ 20c:	80 81       	ld	r24, Z
+ 20e:	63 e0       	ldi	r22, 0x03	; 3
+ 210:	8b df       	rcall	.-234    	; 0x128 <GetBit>
+ 212:	88 23       	and	r24, r24
+ 214:	11 f4       	brne	.+4      	; 0x21a <GetKeypadKey+0xc0>
+ 216:	80 e3       	ldi	r24, 0x30	; 48
+ 218:	5d c0       	rjmp	.+186    	; 0x2d4 <GetKeypadKey+0x17a>
+
+	// Check keys in col 3
+	PORTC = 0xBF; // Enable col 6 with 0, disable others with 1’s
+ 21a:	88 e2       	ldi	r24, 0x28	; 40
+ 21c:	90 e0       	ldi	r25, 0x00	; 0
+ 21e:	2f eb       	ldi	r18, 0xBF	; 191
+ 220:	fc 01       	movw	r30, r24
+	asm("nop"); // add a delay to allow PORTC to stabilize before checking
+ 222:	20 83       	st	Z, r18
+	if (GetBit(PINC,0)==0) { return('3'); }
+ 224:	00 00       	nop
+ 226:	86 e2       	ldi	r24, 0x26	; 38
+ 228:	90 e0       	ldi	r25, 0x00	; 0
+ 22a:	fc 01       	movw	r30, r24
+ 22c:	80 81       	ld	r24, Z
+ 22e:	60 e0       	ldi	r22, 0x00	; 0
+ 230:	7b df       	rcall	.-266    	; 0x128 <GetBit>
+ 232:	88 23       	and	r24, r24
+ 234:	11 f4       	brne	.+4      	; 0x23a <GetKeypadKey+0xe0>
+ 236:	83 e3       	ldi	r24, 0x33	; 51
+	if (GetBit(PINC,1)==0) { return('6'); }
+ 238:	4d c0       	rjmp	.+154    	; 0x2d4 <GetKeypadKey+0x17a>
+ 23a:	86 e2       	ldi	r24, 0x26	; 38
+ 23c:	90 e0       	ldi	r25, 0x00	; 0
+ 23e:	fc 01       	movw	r30, r24
+ 240:	80 81       	ld	r24, Z
+ 242:	61 e0       	ldi	r22, 0x01	; 1
+ 244:	71 df       	rcall	.-286    	; 0x128 <GetBit>
+ 246:	88 23       	and	r24, r24
+ 248:	11 f4       	brne	.+4      	; 0x24e <GetKeypadKey+0xf4>
+ 24a:	86 e3       	ldi	r24, 0x36	; 54
+	if (GetBit(PINC,2)==0) { return('9'); }
+ 24c:	43 c0       	rjmp	.+134    	; 0x2d4 <GetKeypadKey+0x17a>
+ 24e:	86 e2       	ldi	r24, 0x26	; 38
+ 250:	90 e0       	ldi	r25, 0x00	; 0
+ 252:	fc 01       	movw	r30, r24
+ 254:	80 81       	ld	r24, Z
+ 256:	62 e0       	ldi	r22, 0x02	; 2
+ 258:	67 df       	rcall	.-306    	; 0x128 <GetBit>
+ 25a:	88 23       	and	r24, r24
+ 25c:	11 f4       	brne	.+4      	; 0x262 <GetKeypadKey+0x108>
+ 25e:	89 e3       	ldi	r24, 0x39	; 57
+	if (GetBit(PINC,3)==0) { return('#'); }
+ 260:	39 c0       	rjmp	.+114    	; 0x2d4 <GetKeypadKey+0x17a>
+ 262:	86 e2       	ldi	r24, 0x26	; 38
+ 264:	90 e0       	ldi	r25, 0x00	; 0
+ 266:	fc 01       	movw	r30, r24
+ 268:	80 81       	ld	r24, Z
+ 26a:	63 e0       	ldi	r22, 0x03	; 3
+ 26c:	5d df       	rcall	.-326    	; 0x128 <GetBit>
+ 26e:	88 23       	and	r24, r24
+ 270:	11 f4       	brne	.+4      	; 0x276 <GetKeypadKey+0x11c>
+ 272:	83 e2       	ldi	r24, 0x23	; 35
+
+	// Check keys in col 4	
+	PORTC = 0x7F; // Enable col 7 with 0, disable others with 1’s
+ 274:	2f c0       	rjmp	.+94     	; 0x2d4 <GetKeypadKey+0x17a>
+ 276:	88 e2       	ldi	r24, 0x28	; 40
+ 278:	90 e0       	ldi	r25, 0x00	; 0
+ 27a:	2f e7       	ldi	r18, 0x7F	; 127
+ 27c:	fc 01       	movw	r30, r24
+	asm("nop"); // add a delay to allow PORTC to stabilize before checking
+ 27e:	20 83       	st	Z, r18
+	if (GetBit(PINC,0)==0) { return('A'); }
+ 280:	00 00       	nop
+ 282:	86 e2       	ldi	r24, 0x26	; 38
+ 284:	90 e0       	ldi	r25, 0x00	; 0
+ 286:	fc 01       	movw	r30, r24
+ 288:	80 81       	ld	r24, Z
+ 28a:	60 e0       	ldi	r22, 0x00	; 0
+ 28c:	4d df       	rcall	.-358    	; 0x128 <GetBit>
+ 28e:	88 23       	and	r24, r24
+ 290:	11 f4       	brne	.+4      	; 0x296 <GetKeypadKey+0x13c>
+ 292:	81 e4       	ldi	r24, 0x41	; 65
+	if (GetBit(PINC,1)==0) { return('B'); }
+ 294:	1f c0       	rjmp	.+62     	; 0x2d4 <GetKeypadKey+0x17a>
+ 296:	86 e2       	ldi	r24, 0x26	; 38
+ 298:	90 e0       	ldi	r25, 0x00	; 0
+ 29a:	fc 01       	movw	r30, r24
+ 29c:	80 81       	ld	r24, Z
+ 29e:	61 e0       	ldi	r22, 0x01	; 1
+ 2a0:	43 df       	rcall	.-378    	; 0x128 <GetBit>
+ 2a2:	88 23       	and	r24, r24
+ 2a4:	11 f4       	brne	.+4      	; 0x2aa <GetKeypadKey+0x150>
+ 2a6:	82 e4       	ldi	r24, 0x42	; 66
+	if (GetBit(PINC,2)==0) { return('C'); }
+ 2a8:	15 c0       	rjmp	.+42     	; 0x2d4 <GetKeypadKey+0x17a>
+ 2aa:	86 e2       	ldi	r24, 0x26	; 38
+ 2ac:	90 e0       	ldi	r25, 0x00	; 0
+ 2ae:	fc 01       	movw	r30, r24
+ 2b0:	80 81       	ld	r24, Z
+ 2b2:	62 e0       	ldi	r22, 0x02	; 2
+ 2b4:	39 df       	rcall	.-398    	; 0x128 <GetBit>
+ 2b6:	88 23       	and	r24, r24
+ 2b8:	11 f4       	brne	.+4      	; 0x2be <GetKeypadKey+0x164>
+ 2ba:	83 e4       	ldi	r24, 0x43	; 67
+	if (GetBit(PINC,3)==0) { return('D'); }
+ 2bc:	0b c0       	rjmp	.+22     	; 0x2d4 <GetKeypadKey+0x17a>
+ 2be:	86 e2       	ldi	r24, 0x26	; 38
+ 2c0:	90 e0       	ldi	r25, 0x00	; 0
+ 2c2:	fc 01       	movw	r30, r24
+ 2c4:	80 81       	ld	r24, Z
+ 2c6:	63 e0       	ldi	r22, 0x03	; 3
+ 2c8:	2f df       	rcall	.-418    	; 0x128 <GetBit>
+ 2ca:	88 23       	and	r24, r24
+ 2cc:	11 f4       	brne	.+4      	; 0x2d2 <GetKeypadKey+0x178>
+ 2ce:	84 e4       	ldi	r24, 0x44	; 68
+ 2d0:	01 c0       	rjmp	.+2      	; 0x2d4 <GetKeypadKey+0x17a>
+
+	return('\0'); // default value
+ 2d2:	80 e0       	ldi	r24, 0x00	; 0
+
+}
+ 2d4:	df 91       	pop	r29
+ 2d6:	cf 91       	pop	r28
+ 2d8:	08 95       	ret
+
+000002da <main>:
+
+int main(void)
+{
+ 2da:	cf 93       	push	r28
+ 2dc:	df 93       	push	r29
+ 2de:	1f 92       	push	r1
+ 2e0:	cd b7       	in	r28, 0x3d	; 61
+ 2e2:	de b7       	in	r29, 0x3e	; 62
+	unsigned char x;
+	DDRB = 0xFF; PORTB = 0x00; // PORTB set to output, outputs init 0s
+ 2e4:	84 e2       	ldi	r24, 0x24	; 36
+ 2e6:	90 e0       	ldi	r25, 0x00	; 0
+ 2e8:	2f ef       	ldi	r18, 0xFF	; 255
+ 2ea:	fc 01       	movw	r30, r24
+ 2ec:	20 83       	st	Z, r18
+ 2ee:	85 e2       	ldi	r24, 0x25	; 37
+ 2f0:	90 e0       	ldi	r25, 0x00	; 0
+ 2f2:	fc 01       	movw	r30, r24
+ 2f4:	10 82       	st	Z, r1
+	DDRC = 0xF0; PORTC = 0x0F; // PC7..4 outputs init 0s, PC3..0 inputs init 1s
+ 2f6:	87 e2       	ldi	r24, 0x27	; 39
+ 2f8:	90 e0       	ldi	r25, 0x00	; 0
+ 2fa:	20 ef       	ldi	r18, 0xF0	; 240
+ 2fc:	fc 01       	movw	r30, r24
+ 2fe:	20 83       	st	Z, r18
+ 300:	88 e2       	ldi	r24, 0x28	; 40
+ 302:	90 e0       	ldi	r25, 0x00	; 0
+ 304:	2f e0       	ldi	r18, 0x0F	; 15
+ 306:	fc 01       	movw	r30, r24
+ 308:	20 83       	st	Z, r18
+	while(1) {
+		x = GetKeypadKey();
+ 30a:	27 df       	rcall	.-434    	; 0x15a <GetKeypadKey>
+ 30c:	89 83       	std	Y+1, r24	; 0x01
+		switch (x) {
+ 30e:	89 81       	ldd	r24, Y+1	; 0x01
+ 310:	88 2f       	mov	r24, r24
+ 312:	90 e0       	ldi	r25, 0x00	; 0
+ 314:	09 2e       	mov	r0, r25
+ 316:	00 0c       	add	r0, r0
+ 318:	aa 0b       	sbc	r26, r26
+ 31a:	bb 0b       	sbc	r27, r27
+ 31c:	40 e0       	ldi	r20, 0x00	; 0
+ 31e:	50 e0       	ldi	r21, 0x00	; 0
+ 320:	24 e4       	ldi	r18, 0x44	; 68
+ 322:	30 e0       	ldi	r19, 0x00	; 0
+ 324:	84 1b       	sub	r24, r20
+ 326:	95 0b       	sbc	r25, r21
+ 328:	28 17       	cp	r18, r24
+ 32a:	39 07       	cpc	r19, r25
+ 32c:	08 f4       	brcc	.+2      	; 0x330 <main+0x56>
+ 32e:	69 c0       	rjmp	.+210    	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+ 330:	8a 5b       	subi	r24, 0xBA	; 186
+ 332:	9f 4f       	sbci	r25, 0xFF	; 255
+ 334:	fc 01       	movw	r30, r24
+ 336:	6c c0       	rjmp	.+216    	; 0x410 <__tablejump2__>
+			case '\0': PORTB = 0x1F; break; // All 5 LEDs on
+ 338:	85 e2       	ldi	r24, 0x25	; 37
+ 33a:	90 e0       	ldi	r25, 0x00	; 0
+ 33c:	2f e1       	ldi	r18, 0x1F	; 31
+ 33e:	fc 01       	movw	r30, r24
+ 340:	20 83       	st	Z, r18
+ 342:	65 c0       	rjmp	.+202    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '1': PORTB = 0x01; break; // hex equivalent
+ 344:	85 e2       	ldi	r24, 0x25	; 37
+ 346:	90 e0       	ldi	r25, 0x00	; 0
+ 348:	21 e0       	ldi	r18, 0x01	; 1
+ 34a:	fc 01       	movw	r30, r24
+ 34c:	20 83       	st	Z, r18
+ 34e:	5f c0       	rjmp	.+190    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '2': PORTB = 0x02; break;
+ 350:	85 e2       	ldi	r24, 0x25	; 37
+ 352:	90 e0       	ldi	r25, 0x00	; 0
+ 354:	22 e0       	ldi	r18, 0x02	; 2
+ 356:	fc 01       	movw	r30, r24
+ 358:	20 83       	st	Z, r18
+ 35a:	59 c0       	rjmp	.+178    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '3': PORTB = 0x03; break;
+ 35c:	85 e2       	ldi	r24, 0x25	; 37
+ 35e:	90 e0       	ldi	r25, 0x00	; 0
+ 360:	23 e0       	ldi	r18, 0x03	; 3
+ 362:	fc 01       	movw	r30, r24
+ 364:	20 83       	st	Z, r18
+ 366:	53 c0       	rjmp	.+166    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '4': PORTB = 0x04; break;
+ 368:	85 e2       	ldi	r24, 0x25	; 37
+ 36a:	90 e0       	ldi	r25, 0x00	; 0
+ 36c:	24 e0       	ldi	r18, 0x04	; 4
+ 36e:	fc 01       	movw	r30, r24
+ 370:	20 83       	st	Z, r18
+ 372:	4d c0       	rjmp	.+154    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '5': PORTB = 0x05; break;
+ 374:	85 e2       	ldi	r24, 0x25	; 37
+ 376:	90 e0       	ldi	r25, 0x00	; 0
+ 378:	25 e0       	ldi	r18, 0x05	; 5
+ 37a:	fc 01       	movw	r30, r24
+ 37c:	20 83       	st	Z, r18
+ 37e:	47 c0       	rjmp	.+142    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '6': PORTB = 0x06; break;
+ 380:	85 e2       	ldi	r24, 0x25	; 37
+ 382:	90 e0       	ldi	r25, 0x00	; 0
+ 384:	26 e0       	ldi	r18, 0x06	; 6
+ 386:	fc 01       	movw	r30, r24
+ 388:	20 83       	st	Z, r18
+ 38a:	41 c0       	rjmp	.+130    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '7': PORTB = 0x07; break;
+ 38c:	85 e2       	ldi	r24, 0x25	; 37
+ 38e:	90 e0       	ldi	r25, 0x00	; 0
+ 390:	27 e0       	ldi	r18, 0x07	; 7
+ 392:	fc 01       	movw	r30, r24
+ 394:	20 83       	st	Z, r18
+ 396:	3b c0       	rjmp	.+118    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '8': PORTB = 0x08; break;
+ 398:	85 e2       	ldi	r24, 0x25	; 37
+ 39a:	90 e0       	ldi	r25, 0x00	; 0
+ 39c:	28 e0       	ldi	r18, 0x08	; 8
+ 39e:	fc 01       	movw	r30, r24
+ 3a0:	20 83       	st	Z, r18
+ 3a2:	35 c0       	rjmp	.+106    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '9': PORTB = 0x09; break;
+ 3a4:	85 e2       	ldi	r24, 0x25	; 37
+ 3a6:	90 e0       	ldi	r25, 0x00	; 0
+ 3a8:	29 e0       	ldi	r18, 0x09	; 9
+ 3aa:	fc 01       	movw	r30, r24
+ 3ac:	20 83       	st	Z, r18
+ 3ae:	2f c0       	rjmp	.+94     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case 'A': PORTB = 0x0A; break;
+ 3b0:	85 e2       	ldi	r24, 0x25	; 37
+ 3b2:	90 e0       	ldi	r25, 0x00	; 0
+ 3b4:	2a e0       	ldi	r18, 0x0A	; 10
+ 3b6:	fc 01       	movw	r30, r24
+ 3b8:	20 83       	st	Z, r18
+ 3ba:	29 c0       	rjmp	.+82     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case 'B': PORTB = 0x0B; break;
+ 3bc:	85 e2       	ldi	r24, 0x25	; 37
+ 3be:	90 e0       	ldi	r25, 0x00	; 0
+ 3c0:	2b e0       	ldi	r18, 0x0B	; 11
+ 3c2:	fc 01       	movw	r30, r24
+ 3c4:	20 83       	st	Z, r18
+ 3c6:	23 c0       	rjmp	.+70     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case 'C': PORTB = 0x0C; break;
+ 3c8:	85 e2       	ldi	r24, 0x25	; 37
+ 3ca:	90 e0       	ldi	r25, 0x00	; 0
+ 3cc:	2c e0       	ldi	r18, 0x0C	; 12
+ 3ce:	fc 01       	movw	r30, r24
+ 3d0:	20 83       	st	Z, r18
+ 3d2:	1d c0       	rjmp	.+58     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case 'D': PORTB = 0x0D; break;
+ 3d4:	85 e2       	ldi	r24, 0x25	; 37
+ 3d6:	90 e0       	ldi	r25, 0x00	; 0
+ 3d8:	2d e0       	ldi	r18, 0x0D	; 13
+ 3da:	fc 01       	movw	r30, r24
+ 3dc:	20 83       	st	Z, r18
+ 3de:	17 c0       	rjmp	.+46     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '*': PORTB = 0x0E; break;
+ 3e0:	85 e2       	ldi	r24, 0x25	; 37
+ 3e2:	90 e0       	ldi	r25, 0x00	; 0
+ 3e4:	2e e0       	ldi	r18, 0x0E	; 14
+ 3e6:	fc 01       	movw	r30, r24
+ 3e8:	20 83       	st	Z, r18
+ 3ea:	11 c0       	rjmp	.+34     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '0': PORTB = 0x00; break;
+ 3ec:	85 e2       	ldi	r24, 0x25	; 37
+ 3ee:	90 e0       	ldi	r25, 0x00	; 0
+ 3f0:	fc 01       	movw	r30, r24
+ 3f2:	10 82       	st	Z, r1
+ 3f4:	0c c0       	rjmp	.+24     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			case '#': PORTB = 0x0F; break;
+ 3f6:	85 e2       	ldi	r24, 0x25	; 37
+ 3f8:	90 e0       	ldi	r25, 0x00	; 0
+ 3fa:	2f e0       	ldi	r18, 0x0F	; 15
+ 3fc:	fc 01       	movw	r30, r24
+ 3fe:	20 83       	st	Z, r18
+ 400:	06 c0       	rjmp	.+12     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+			default: PORTB = 0x1B; break; // Should never occur. Middle LED off.
+ 402:	85 e2       	ldi	r24, 0x25	; 37
+ 404:	90 e0       	ldi	r25, 0x00	; 0
+ 406:	2b e1       	ldi	r18, 0x1B	; 27
+ 408:	fc 01       	movw	r30, r24
+ 40a:	20 83       	st	Z, r18
+ 40c:	00 00       	nop
+		}
+	}
+ 40e:	7d cf       	rjmp	.-262    	; 0x30a <main+0x30>
+
+00000410 <__tablejump2__>:
+ 410:	ee 0f       	add	r30, r30
+ 412:	ff 1f       	adc	r31, r31
+ 414:	00 24       	eor	r0, r0
+ 416:	00 1c       	adc	r0, r0
+ 418:	0b be       	out	0x3b, r0	; 59
+ 41a:	07 90       	elpm	r0, Z+
+ 41c:	f6 91       	elpm	r31, Z
+ 41e:	e0 2d       	mov	r30, r0
+ 420:	09 94       	ijmp
+
+00000422 <_exit>:
+ 422:	f8 94       	cli
+
+00000424 <__stop_program>:
+ 424:	ff cf       	rjmp	.-2      	; 0x424 <__stop_program>
