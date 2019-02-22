@@ -11,7 +11,7 @@ main.d main.o: .././main.c \
  c:\users\ruzst\desktop\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\users\ruzst\desktop\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  c:\users\ruzst\desktop\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- ../../../../0_includes/bit.h ../../../../0_includes/timer.h \
+ ../../../0_includes/bit.h ../../../0_includes/timer.h \
  c:\users\ruzst\desktop\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\users\ruzst\desktop\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\users\ruzst\desktop\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h
@@ -40,9 +40,9 @@ c:\users\ruzst\desktop\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\a
 
 c:\users\ruzst\desktop\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
-../../../../0_includes/bit.h:
+../../../0_includes/bit.h:
 
-../../../../0_includes/timer.h:
+../../../0_includes/timer.h:
 
 c:\users\ruzst\desktop\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
 

@@ -15,7 +15,7 @@
 unsigned char GetKeypadKey() {
 	/* // Returns '\0' if no key pressed, else returns char '1', '2', ... '9', 'A', ...
 	// If multiple keys pressed, returns leftmost-topmost one
-	// Keypad must be connected to port C
+	// Keypad must be connected to port A
 	  Keypad arrangement
 			PC4 PC5 PC6 PC7
 	   col  1   2   3   4
@@ -26,37 +26,37 @@ unsigned char GetKeypadKey() {
 	PC3 4   * | 0 | # | D
 	*/
 	
-	PORTC = 0xEF; // Enable col 4 with 0, disable others with 1’s
+	PORTA = 0xEF; // Enable col 4 with 0, disable others with 1’s
 	asm("nop"); // add a delay to allow PORTC to stabilize before checking
 	
-	if (GetBit(PINC,0)==0) { return('1'); }
-	if (GetBit(PINC,1)==0) { return('4'); }
-	if (GetBit(PINC,2)==0) { return('7'); }
-	if (GetBit(PINC,3)==0) { return('*'); }
+	if (GetBit(PINA,0)==0) { return('1'); }
+	if (GetBit(PINA,1)==0) { return('4'); }
+	if (GetBit(PINA,2)==0) { return('7'); }
+	if (GetBit(PINA,3)==0) { return('*'); }
 
 	// Check keys in col 2
-	PORTC = 0xDF; // Enable col 5 with 0, disable others with 1’s
+	PORTA = 0xDF; // Enable col 5 with 0, disable others with 1’s
 	asm("nop"); // add a delay to allow PORTC to stabilize before checking
-	if (GetBit(PINC,0)==0) { return('2'); }
-	if (GetBit(PINC,1)==0) { return('5'); }
-	if (GetBit(PINC,2)==0) { return('8'); }
-	if (GetBit(PINC,3)==0) { return('0'); }
+	if (GetBit(PINA,0)==0) { return('2'); }
+	if (GetBit(PINA,1)==0) { return('5'); }
+	if (GetBit(PINA,2)==0) { return('8'); }
+	if (GetBit(PINA,3)==0) { return('0'); }
 
 	// Check keys in col 3
-	PORTC = 0xBF; // Enable col 6 with 0, disable others with 1’s
+	PORTA = 0xBF; // Enable col 6 with 0, disable others with 1’s
 	asm("nop"); // add a delay to allow PORTC to stabilize before checking
-	if (GetBit(PINC,0)==0) { return('3'); }
-	if (GetBit(PINC,1)==0) { return('6'); }
-	if (GetBit(PINC,2)==0) { return('9'); }
-	if (GetBit(PINC,3)==0) { return('#'); }
+	if (GetBit(PINA,0)==0) { return('3'); }
+	if (GetBit(PINA,1)==0) { return('6'); }
+	if (GetBit(PINA,2)==0) { return('9'); }
+	if (GetBit(PINA,3)==0) { return('#'); }
 
 	// Check keys in col 4	
-	PORTC = 0x7F; // Enable col 7 with 0, disable others with 1’s
+	PORTA = 0x7F; // Enable col 7 with 0, disable others with 1’s
 	asm("nop"); // add a delay to allow PORTC to stabilize before checking
-	if (GetBit(PINC,0)==0) { return('A'); }
-	if (GetBit(PINC,1)==0) { return('B'); }
-	if (GetBit(PINC,2)==0) { return('C'); }
-	if (GetBit(PINC,3)==0) { return('D'); }
+	if (GetBit(PINA,0)==0) { return('A'); }
+	if (GetBit(PINA,1)==0) { return('B'); }
+	if (GetBit(PINA,2)==0) { return('C'); }
+	if (GetBit(PINA,3)==0) { return('D'); }
 
 	return('\0'); // default value
 	
@@ -184,7 +184,8 @@ int main(void)
 int main() {
 
 	DDRB = 0xFF; PORTB = 0x00; // PORTB set to output, outputs init 0s
-	DDRC = 0xF0; PORTC = 0x0F; // PC7..4 outputs init 0s, PC3..0 inputs init 1s
+	DDRA = 0xF0; PORTA = 0x0F; // PC7..4 outputs init 0s, PC3..0 inputs init 1s
+	DDRD = 0xFF; PORTD = 0x00;
 	// . . . etc
 
 	// Period for the tasks
