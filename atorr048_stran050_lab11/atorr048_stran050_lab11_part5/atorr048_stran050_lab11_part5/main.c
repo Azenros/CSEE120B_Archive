@@ -41,8 +41,7 @@ typedef struct _task {
 unsigned char tmpA;
 unsigned char SM1_out;
 unsigned char obstacle;
-unsigned char ob1Loc;
-unsigned char ob2Loc;
+unsigned char ob1Loc, ob2Loc, ob3Loc, ob4Loc;
 unsigned char pause; //shared
 unsigned char upDown;
 
@@ -51,7 +50,7 @@ unsigned char upDown;
 enum SM1_States {SM1_Start, SM1_Wait, SM1_Press, SM1_Hold};  //pause or start the game
 enum SM2_States {SM2_Start, SM2_Wait, SM2_Up, SM2_Down, SM2_Hold};  //move the player up or down
 enum SM3_States {SM3_Start, SM3_Move};  // if not paused, move the obstacles to the left
-enum SM4_States {SM4_Start, SM4_Check, SM4_Display}; // checks for collision; if collision, pause and display message
+enum SM4_States {SM4_Start, SM4_Check, SM4_Display, SM4_Wait4Reset}; // checks for collision; if collision, pause and display message
 
 int SMTick1(int state) {
 	switch (state) {
@@ -63,26 +62,11 @@ int SMTick1(int state) {
 	}
 	switch (state) {
 		case SM1_Start: break;
-		case SM1_Wait: 
-// 			LCD_ClearScreen();
-// 			LCD_DisplayString(1, "now waiting");
-			break;
+		case SM1_Wait: break;
 		case SM1_Press: 
 			pause = (pause) ? 0 : 1; 
-			
-// 			if(pause) {
-// 				LCD_ClearScreen();
-// 				LCD_DisplayString(1, "now paused");
-// 			}
-// 			else {
-// 				LCD_ClearScreen();
-// 				LCD_DisplayString(1, "now unpaused");
-//			}
 			break;
-		case SM1_Hold:
-// 			LCD_ClearScreen();
-// 			LCD_DisplayString(1, "hold");
-			break;
+		case SM1_Hold: break;
 		default: break;
 	}
 	return state;
@@ -134,11 +118,7 @@ int SMTick3(int state) {
 		default: state = SM3_Start; break;
 	}
 	switch (state) {
-		case SM3_Start: 
-			ob1Loc = 15;
-			ob2Loc = 28;
-			
-			break;
+		case SM3_Start: break;
 		case SM3_Move:
 			if (!pause) {
 				if (ob1Loc == 1) {
@@ -153,6 +133,19 @@ int SMTick3(int state) {
 				else {
 					ob2Loc--;
 				}
+				if (ob3Loc == 1) {
+					ob3Loc = 16;
+				}
+				else {
+					ob3Loc--;
+				}
+				if (ob4Loc == 17) {
+					ob4Loc = 32;
+				}
+				else {
+					ob4Loc--;
+				}
+				
 				
 				LCD_ClearScreen();
 				
@@ -162,13 +155,21 @@ int SMTick3(int state) {
 				LCD_Cursor(ob2Loc);
 				LCD_WriteData(obstacle);
 				
+				LCD_Cursor(ob3Loc);
+				LCD_WriteData(obstacle);
+				
+				LCD_Cursor(ob4Loc);
+				LCD_WriteData(obstacle);
+				
 				if (upDown) {
 					LCD_Cursor(2);
 				}
 				else {
 					LCD_Cursor(18);
 				}
+				
 			}
+			
 			break;
 		default: break;
 	}
@@ -178,11 +179,15 @@ int SMTick4(int state) {
 	switch (state) {
 		case SM4_Start: state = SM4_Check;
 		case SM4_Check:
-			if ((upDown && (ob1Loc == 2)) || (!upDown && (ob2Loc == 18))) {
+			if ((upDown && (ob1Loc == 2)) 
+			|| (!upDown && (ob2Loc == 18))
+			|| (upDown && (ob3Loc == 2))
+			|| (!upDown && (ob4Loc == 18))) {
 				state = SM4_Display;
 			}
 			break;
-		case SM4_Display:
+		case SM4_Display: state = SM4_Wait4Reset; break;
+		case SM4_Wait4Reset:
 			if (tmpA == 0x01) {
 				state = SM4_Check;
 			}
@@ -192,9 +197,21 @@ int SMTick4(int state) {
 	switch (state) {
 		case SM4_Start: break;
 		case SM4_Check: break;
-		case SM4_Display: pause = 1; break;
+		case SM4_Display: 
+			pause = 1; 
+			LCD_ClearScreen();
+			LCD_DisplayString(2, "TRY AGAIN?");
+			LCD_DisplayString(19, "> YES   NO");
+			break;
+		case SM4_Wait4Reset: 
+			ob1Loc = 15;
+			ob2Loc = 27;
+			ob3Loc = 7;
+			ob4Loc = 19;
+			break;
 		default: break;
 	}
+	return state;
 }
 
 int main() {
@@ -258,14 +275,23 @@ int main() {
 	TimerSet(GCD);
 	TimerOn();
 	
+	// Start or reset the LCD screen
+	LCD_init();
 	LCD_ClearScreen();
 	
 	obstacle = '#';
-	pause = 0;
+	pause = 1;
+	ob1Loc = 15;
+	ob2Loc = 27;
+	ob3Loc = 7;
+	ob4Loc = 19;
 	
-// 	LCD_Cursor(ob1Loc); LCD_WriteData(obstacle);
-// 	LCD_Cursor(ob2Loc); LCD_WriteData(obstacle);
+	LCD_Cursor(ob1Loc); LCD_WriteData(obstacle);
+	LCD_Cursor(ob2Loc); LCD_WriteData(obstacle);
+	LCD_Cursor(ob3Loc); LCD_WriteData(obstacle);
+	LCD_Cursor(ob4Loc); LCD_WriteData(obstacle);
  	LCD_Cursor(2);
+	upDown = 1;
 
 	unsigned short i; // Scheduler for-loop iterator
 	while(1) {

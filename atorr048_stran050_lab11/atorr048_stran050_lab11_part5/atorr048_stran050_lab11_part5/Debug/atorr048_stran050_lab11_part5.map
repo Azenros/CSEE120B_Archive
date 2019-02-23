@@ -14,10 +14,12 @@ Common symbol       size              file
 
 pause               0x1               main.o
 ob2Loc              0x1               main.o
+ob4Loc              0x1               main.o
 ob1Loc              0x1               main.o
 obstacle            0x1               main.o
 tmpA                0x1               main.o
 upDown              0x1               main.o
+ob3Loc              0x1               main.o
 SM1_out             0x1               main.o
 
 Discarded input sections
@@ -27,10 +29,6 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
- .text.LCD_init
-                0x00000000       0x38 main.o
- .text.LCD_DisplayString
-                0x00000000       0x5a main.o
  .text.SetBit   0x00000000       0x5c main.o
  .text.GetBit   0x00000000       0x32 main.o
  .text.TimerOff
@@ -222,7 +220,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xaf4
+.text           0x00000000      0xdb8
  *(.vectors)
  .vectors       0x00000000       0x8c C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
                 0x00000000                __vector_default
@@ -320,47 +318,55 @@ END GROUP
  .text.LCD_ClearScreen
                 0x000000c8       0x14 main.o
                 0x000000c8                LCD_ClearScreen
+ .text.LCD_init
+                0x000000dc       0x2c main.o
+                0x000000dc                LCD_init
  .text.LCD_WriteCommand
-                0x000000dc       0x5e main.o
-                0x000000dc                LCD_WriteCommand
+                0x00000108       0x5e main.o
+                0x00000108                LCD_WriteCommand
  .text.LCD_WriteData
-                0x0000013a       0x5e main.o
-                0x0000013a                LCD_WriteData
+                0x00000166       0x5e main.o
+                0x00000166                LCD_WriteData
+ .text.LCD_DisplayString
+                0x000001c4       0x54 main.o
+                0x000001c4                LCD_DisplayString
  .text.LCD_Cursor
-                0x00000198       0x2a main.o
-                0x00000198                LCD_Cursor
+                0x00000218       0x2a main.o
+                0x00000218                LCD_Cursor
  .text.delay_ms
-                0x000001c2       0x60 main.o
-                0x000001c2                delay_ms
+                0x00000242       0x60 main.o
+                0x00000242                delay_ms
  .text.TimerSet
-                0x00000222       0x5c main.o
-                0x00000222                TimerSet
- .text.TimerOn  0x0000027e       0x6e main.o
-                0x0000027e                TimerOn
+                0x000002a2       0x5c main.o
+                0x000002a2                TimerSet
+ .text.TimerOn  0x000002fe       0x6e main.o
+                0x000002fe                TimerOn
  .text.TimerISR
-                0x000002ec       0x16 main.o
-                0x000002ec                TimerISR
+                0x0000036c       0x16 main.o
+                0x0000036c                TimerISR
  .text.__vector_13
-                0x00000302       0xc2 main.o
-                0x00000302                __vector_13
- .text.findGCD  0x000003c4       0x98 main.o
-                0x000003c4                findGCD
- .text.SMTick1  0x0000045c       0xd4 main.o
-                0x0000045c                SMTick1
- .text.SMTick2  0x00000530      0x106 main.o
-                0x00000530                SMTick2
- .text.SMTick3  0x00000636       0xc6 main.o
-                0x00000636                SMTick3
- .text.main     0x000006fc      0x3b0 main.o
-                0x000006fc                main
+                0x00000382       0xc2 main.o
+                0x00000382                __vector_13
+ .text.findGCD  0x00000444       0x98 main.o
+                0x00000444                findGCD
+ .text.SMTick1  0x000004dc       0xd4 main.o
+                0x000004dc                SMTick1
+ .text.SMTick2  0x000005b0      0x106 main.o
+                0x000005b0                SMTick2
+ .text.SMTick3  0x000006b6      0x10a main.o
+                0x000006b6                SMTick3
+ .text.SMTick4  0x000007c0      0x114 main.o
+                0x000007c0                SMTick4
+ .text.main     0x000008d4      0x49c main.o
+                0x000008d4                main
  .text.libgcc.div
-                0x00000aac       0x44 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
-                0x00000aac                __udivmodsi4
-                0x00000af0                . = ALIGN (0x2)
+                0x00000d70       0x44 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+                0x00000d70                __udivmodsi4
+                0x00000db4                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000af0        0x0 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
-                0x00000af0                _exit
-                0x00000af0                exit
+ .fini9         0x00000db4        0x0 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+                0x00000db4                _exit
+                0x00000db4                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -379,11 +385,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000af0        0x4 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .fini0         0x00000db4        0x4 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000af4                _etext = .
+                0x00000db8                _etext = .
 
-.data           0x00800100        0xa load address 0x00000af4
+.data           0x00800100       0x26 load address 0x00000db8
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -392,47 +398,52 @@ END GROUP
                 0x00800100                _avr_timer_M
  *(.gnu.linkonce.d*)
  *(.rodata)
- .rodata        0x00800104        0x6 main.o
+ .rodata        0x00800104       0x21 main.o
  *(.rodata*)
  *(.gnu.linkonce.r*)
-                0x0080010a                . = ALIGN (0x2)
-                0x0080010a                _edata = .
-                0x0080010a                PROVIDE (__data_end, .)
+                0x00800126                . = ALIGN (0x2)
+ *fill*         0x00800125        0x1 
+                0x00800126                _edata = .
+                0x00800126                PROVIDE (__data_end, .)
 
-.bss            0x0080010a       0x2d
-                0x0080010a                PROVIDE (__bss_start, .)
+.bss            0x00800126       0x3a
+                0x00800126                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.TimerFlag
-                0x0080010a        0x1 main.o
-                0x0080010a                TimerFlag
+                0x00800126        0x1 main.o
+                0x00800126                TimerFlag
  .bss._avr_timer_cntcurr
-                0x0080010b        0x4 main.o
-                0x0080010b                _avr_timer_cntcurr
- .bss.task1.1962
-                0x0080010f        0xb main.o
- .bss.task2.1963
-                0x0080011a        0xb main.o
- .bss.task3.1964
-                0x00800125        0xb main.o
+                0x00800127        0x4 main.o
+                0x00800127                _avr_timer_cntcurr
+ .bss.task1.1986
+                0x0080012b        0xb main.o
+ .bss.task2.1987
+                0x00800136        0xb main.o
+ .bss.task3.1988
+                0x00800141        0xb main.o
+ .bss.task4.1989
+                0x0080014c        0xb main.o
  *(COMMON)
- COMMON         0x00800130        0x7 main.o
-                0x00800130                pause
-                0x00800131                ob2Loc
-                0x00800132                ob1Loc
-                0x00800133                obstacle
-                0x00800134                tmpA
-                0x00800135                upDown
-                0x00800136                SM1_out
-                0x00800137                PROVIDE (__bss_end, .)
-                0x00000af4                __data_load_start = LOADADDR (.data)
-                0x00000afe                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800157        0x9 main.o
+                0x00800157                pause
+                0x00800158                ob2Loc
+                0x00800159                ob4Loc
+                0x0080015a                ob1Loc
+                0x0080015b                obstacle
+                0x0080015c                tmpA
+                0x0080015d                upDown
+                0x0080015e                ob3Loc
+                0x0080015f                SM1_out
+                0x00800160                PROVIDE (__bss_end, .)
+                0x00000db8                __data_load_start = LOADADDR (.data)
+                0x00000dde                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800137        0x0
+.noinit         0x00800160        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800137                _end = .
+                0x00800160                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -497,42 +508,42 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xb0
+.debug_aranges  0x00000000       0xb8
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0xb0 main.o
+                0x00000000       0xb8 main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0xdb7
+.debug_info     0x00000000      0xe5f
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x792 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .debug_info    0x00000792      0x625 main.o
+ .debug_info    0x00000792      0x6cd main.o
 
-.debug_abbrev   0x00000000      0x8d6
+.debug_abbrev   0x00000000      0x8e5
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x729 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .debug_abbrev  0x00000729      0x1ad main.o
+ .debug_abbrev  0x00000729      0x1bc main.o
 
-.debug_line     0x00000000      0x8ec
+.debug_line     0x00000000      0xab5
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x169 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .debug_line    0x00000169      0x783 main.o
+ .debug_line    0x00000169      0x94c main.o
 
-.debug_frame    0x00000000      0x2c4
+.debug_frame    0x00000000      0x2e4
  *(.debug_frame)
- .debug_frame   0x00000000      0x2c4 main.o
+ .debug_frame   0x00000000      0x2e4 main.o
 
-.debug_str      0x00000000      0x68e
+.debug_str      0x00000000      0x700
  *(.debug_str)
  .debug_str     0x00000000      0x296 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .debug_str     0x00000296      0x3f8 main.o
-                                0x44a (size before relaxing)
+ .debug_str     0x00000296      0x46a main.o
+                                0x4bc (size before relaxing)
 
-.debug_loc      0x00000000      0x5d8
+.debug_loc      0x00000000      0x620
  *(.debug_loc)
- .debug_loc     0x00000000      0x5d8 main.o
+ .debug_loc     0x00000000      0x620 main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -552,9 +563,9 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0xa0
+.debug_ranges   0x00000000       0xa8
  *(.debug_ranges)
- .debug_ranges  0x00000000       0xa0 main.o
+ .debug_ranges  0x00000000       0xa8 main.o
 
 .debug_macro
  *(.debug_macro)
