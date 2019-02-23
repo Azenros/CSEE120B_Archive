@@ -17,6 +17,7 @@ ob2Loc              0x1               main.o
 ob4Loc              0x1               main.o
 ob1Loc              0x1               main.o
 obstacle            0x1               main.o
+endGame             0x1               main.o
 tmpA                0x1               main.o
 upDown              0x1               main.o
 ob3Loc              0x1               main.o
@@ -220,7 +221,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xdb8
+.text           0x00000000      0xddc
  *(.vectors)
  .vectors       0x00000000       0x8c C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
                 0x00000000                __vector_default
@@ -351,22 +352,22 @@ END GROUP
                 0x00000444                findGCD
  .text.SMTick1  0x000004dc       0xd4 main.o
                 0x000004dc                SMTick1
- .text.SMTick2  0x000005b0      0x106 main.o
+ .text.SMTick2  0x000005b0      0x11e main.o
                 0x000005b0                SMTick2
- .text.SMTick3  0x000006b6      0x10a main.o
-                0x000006b6                SMTick3
- .text.SMTick4  0x000007c0      0x114 main.o
-                0x000007c0                SMTick4
- .text.main     0x000008d4      0x49c main.o
-                0x000008d4                main
+ .text.SMTick3  0x000006ce      0x10a main.o
+                0x000006ce                SMTick3
+ .text.SMTick4  0x000007d8      0x120 main.o
+                0x000007d8                SMTick4
+ .text.main     0x000008f8      0x49c main.o
+                0x000008f8                main
  .text.libgcc.div
-                0x00000d70       0x44 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
-                0x00000d70                __udivmodsi4
-                0x00000db4                . = ALIGN (0x2)
+                0x00000d94       0x44 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+                0x00000d94                __udivmodsi4
+                0x00000dd8                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000db4        0x0 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
-                0x00000db4                _exit
-                0x00000db4                exit
+ .fini9         0x00000dd8        0x0 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+                0x00000dd8                _exit
+                0x00000dd8                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -385,11 +386,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000db4        0x4 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .fini0         0x00000dd8        0x4 c:/users/ruzst/desktop/atmel/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000db8                _etext = .
+                0x00000ddc                _etext = .
 
-.data           0x00800100       0x26 load address 0x00000db8
+.data           0x00800100       0x28 load address 0x00000ddc
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -398,52 +399,53 @@ END GROUP
                 0x00800100                _avr_timer_M
  *(.gnu.linkonce.d*)
  *(.rodata)
- .rodata        0x00800104       0x21 main.o
+ .rodata        0x00800104       0x23 main.o
  *(.rodata*)
  *(.gnu.linkonce.r*)
-                0x00800126                . = ALIGN (0x2)
- *fill*         0x00800125        0x1 
-                0x00800126                _edata = .
-                0x00800126                PROVIDE (__data_end, .)
+                0x00800128                . = ALIGN (0x2)
+ *fill*         0x00800127        0x1 
+                0x00800128                _edata = .
+                0x00800128                PROVIDE (__data_end, .)
 
-.bss            0x00800126       0x3a
-                0x00800126                PROVIDE (__bss_start, .)
+.bss            0x00800128       0x3b
+                0x00800128                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.TimerFlag
-                0x00800126        0x1 main.o
-                0x00800126                TimerFlag
+                0x00800128        0x1 main.o
+                0x00800128                TimerFlag
  .bss._avr_timer_cntcurr
-                0x00800127        0x4 main.o
-                0x00800127                _avr_timer_cntcurr
- .bss.task1.1986
-                0x0080012b        0xb main.o
- .bss.task2.1987
-                0x00800136        0xb main.o
- .bss.task3.1988
-                0x00800141        0xb main.o
- .bss.task4.1989
-                0x0080014c        0xb main.o
+                0x00800129        0x4 main.o
+                0x00800129                _avr_timer_cntcurr
+ .bss.task1.1987
+                0x0080012d        0xb main.o
+ .bss.task2.1988
+                0x00800138        0xb main.o
+ .bss.task3.1989
+                0x00800143        0xb main.o
+ .bss.task4.1990
+                0x0080014e        0xb main.o
  *(COMMON)
- COMMON         0x00800157        0x9 main.o
-                0x00800157                pause
-                0x00800158                ob2Loc
-                0x00800159                ob4Loc
-                0x0080015a                ob1Loc
-                0x0080015b                obstacle
-                0x0080015c                tmpA
-                0x0080015d                upDown
-                0x0080015e                ob3Loc
-                0x0080015f                SM1_out
-                0x00800160                PROVIDE (__bss_end, .)
-                0x00000db8                __data_load_start = LOADADDR (.data)
-                0x00000dde                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800159        0xa main.o
+                0x00800159                pause
+                0x0080015a                ob2Loc
+                0x0080015b                ob4Loc
+                0x0080015c                ob1Loc
+                0x0080015d                obstacle
+                0x0080015e                endGame
+                0x0080015f                tmpA
+                0x00800160                upDown
+                0x00800161                ob3Loc
+                0x00800162                SM1_out
+                0x00800163                PROVIDE (__bss_end, .)
+                0x00000ddc                __data_load_start = LOADADDR (.data)
+                0x00000e04                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800160        0x0
+.noinit         0x00800163        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800160                _end = .
+                0x00800163                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -516,30 +518,30 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0xe5f
+.debug_info     0x00000000      0xe71
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x792 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .debug_info    0x00000792      0x6cd main.o
+ .debug_info    0x00000792      0x6df main.o
 
 .debug_abbrev   0x00000000      0x8e5
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x729 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
  .debug_abbrev  0x00000729      0x1bc main.o
 
-.debug_line     0x00000000      0xab5
+.debug_line     0x00000000      0xad9
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x169 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .debug_line    0x00000169      0x94c main.o
+ .debug_line    0x00000169      0x970 main.o
 
 .debug_frame    0x00000000      0x2e4
  *(.debug_frame)
  .debug_frame   0x00000000      0x2e4 main.o
 
-.debug_str      0x00000000      0x700
+.debug_str      0x00000000      0x708
  *(.debug_str)
  .debug_str     0x00000000      0x296 C:/Users/ruzst/Desktop/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega1284/avr51/crtatmega1284.o
- .debug_str     0x00000296      0x46a main.o
-                                0x4bc (size before relaxing)
+ .debug_str     0x00000296      0x472 main.o
+                                0x4c4 (size before relaxing)
 
 .debug_loc      0x00000000      0x620
  *(.debug_loc)
